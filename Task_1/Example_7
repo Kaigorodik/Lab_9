@@ -1,0 +1,17 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        try {
+            System.out.println("0");
+            throw new NullPointerException("ошибка");
+        } catch (NullPointerException e) {// исключение будет перехвачено
+            System.out.println("1");
+            throw new ArithmeticException();
+        } catch (ArithmeticException e) { //иисключение не будет перехвачено из-за отсутствия вложенности и поток прервется
+            System.out.println("2");
+        }
+        System.out.println("3");
+    }
+}
